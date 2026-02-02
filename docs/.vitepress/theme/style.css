@@ -1,0 +1,99 @@
+/**
+ * 自定义样式文件 - 蓝紫渐变科技风
+ */
+
+/* ==================== 主题色配置 ==================== */
+:root {
+  /* 主色调 - 靛蓝 */
+  --vp-c-brand-1: #6366f1;
+  --vp-c-brand-2: #818cf8;
+  --vp-c-brand-3: #4f46e5;
+  --vp-c-brand-soft: rgba(99, 102, 241, 0.14);
+  
+  /* 渐变色 */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  
+  --vp-home-hero-image-background-image: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+.dark {
+  --vp-c-brand-1: #818cf8;
+  --vp-c-brand-2: #a5b4fc;
+  --vp-c-brand-3: #6366f1;
+}
+
+/* ==================== Hero 区域动画 ==================== */
+.VPHero .text,
+.VPHero .tagline,
+.VPHero .actions {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.VPHero .text { 
+  animation-delay: 0.1s; 
+}
+
+.VPHero .tagline { 
+  animation-delay: 0.2s; 
+}
+
+.VPHero .actions { 
+  animation-delay: 0.3s; 
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== Feature 卡片悬浮效果 ==================== */
+.VPFeature {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.VPFeature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.15);
+}
+
+/* ==================== 导航栏底部彩虹渐变线 ==================== */
+.VPNav {
+  border-bottom: 2px solid transparent;
+  background-image: linear-gradient(var(--vp-c-bg), var(--vp-c-bg)), 
+                    linear-gradient(90deg, #6366f1, #a855f7, #ec4899, #f43f5e);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* ==================== 平滑滚动 ==================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==================== 自定义滚动条 ==================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+}
