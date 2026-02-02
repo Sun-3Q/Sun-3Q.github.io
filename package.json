@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "vitepress": "2.0.0-alpha.15",
-    "vitepress-plugin-rss": "^1.0.0"
+    "vitepress-plugin-rss": "^0.4.2"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
