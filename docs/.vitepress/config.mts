@@ -59,7 +59,8 @@ export default defineConfig({
         text: '项目实战',
         collapsed: false, // 默认展开
         items: [
-          { text: '🚀 VitePress 部署指南', link: '/deployment-guide'}
+          { text: '🚀 VitePress 部署指南', link: '/deployment-guide'},
+          { text: '💬 Giscus 评论配置', link: '/giscus-setup'}
         ]
       }
     ],

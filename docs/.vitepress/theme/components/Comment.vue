@@ -22,9 +22,17 @@ const loadGiscus = () => {
   const script = document.createElement('script')
   script.src = 'https://giscus.app/client.js'
   script.setAttribute('data-repo', 'Sun-3Q/Sun-3Q.github.io')
-  script.setAttribute('data-repo-id', 'R_placeholder')
-  script.setAttribute('data-category', 'Announcements')
-  script.setAttribute('data-category-id', 'DIC_placeholder')
+  
+  // ⚠️ 重要：请替换下面的占位符为实际值
+  // 1. 确保仓库是公开的
+  // 2. 在仓库 Settings → Features 中启用 Discussions
+  // 3. 安装 Giscus App: https://github.com/apps/giscus
+  // 4. 访问 https://giscus.app 获取实际的 repo-id 和 category-id
+  // 详细配置指南: docs/giscus-setup.md
+  script.setAttribute('data-repo-id', 'R_placeholder')  // ← 替换为从 giscus.app 获取的实际值
+  script.setAttribute('data-category', 'Announcements')  // ← 如需要可修改为其他分类 (如 General)
+  script.setAttribute('data-category-id', 'DIC_placeholder')  // ← 替换为从 giscus.app 获取的实际值
+  
   script.setAttribute('data-mapping', 'pathname')
   script.setAttribute('data-strict', '0')
   script.setAttribute('data-reactions-enabled', '1')
