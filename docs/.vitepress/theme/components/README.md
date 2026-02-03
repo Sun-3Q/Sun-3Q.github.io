@@ -1,5 +1,20 @@
 # Giscus 评论组件配置说明
 
+## ❓ 必须安装 Giscus App 吗？
+
+**是的，必须安装。** 
+
+Giscus App 是评论系统的核心，没有它：
+- ❌ 评论区无法加载
+- ❌ 访客无法发表评论  
+- ❌ giscus.app 会提示"无法在该仓库上使用 giscus"
+
+**放心安装**：Giscus 是开源的，只请求 Discussions 权限，不会访问你的代码。
+
+📖 **详细说明**：查看 [完整 FAQ](../../../giscus-setup.md#-必须要安装-giscus-app-吗)
+
+---
+
 ## 🚀 快速配置
 
 当前 `Comment.vue` 使用占位符，需要替换为实际配置：
