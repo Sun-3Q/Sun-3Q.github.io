@@ -226,3 +226,22 @@ jobs:
 - **预览**: `pnpm run docs:dev`
     
 - **更新**: `git add .` -> `git commit -m "update"` -> `git push`
+
+---
+
+## 八、 配置评论系统 (可选)
+
+网站已集成 Giscus 评论系统，但需要完成以下配置才能使用：
+
+1. **查看详细配置指南**：[Giscus 评论系统配置指南](/giscus-setup)
+
+2. **快速配置步骤**：
+   - 确保仓库是公开的
+   - 启用 Discussions 功能 (Settings → Features)
+   - 安装 Giscus App: https://github.com/apps/giscus
+   - 访问 https://giscus.app 获取配置参数
+   - 更新 `docs/.vitepress/theme/components/Comment.vue` 中的占位符
+
+3. **如遇到问题**：参考配置指南中的故障排查部分
+
+配置完成后，每篇文章底部都会显示评论区，访客可以使用 GitHub 账号登录评论。
