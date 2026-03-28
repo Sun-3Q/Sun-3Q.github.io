@@ -1,21 +1,35 @@
 import { defineConfig } from 'vitepress'
 
+const siteTitle = 'Sun-3Q Space'
+const siteDescription = '记录技术、生活与思考'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Sun-3Q Space",
-  description: "记录技术、生活与思考",
-  
-  // 核心：部署在 Sun-3Q.github.io 主站，base 必须为 /
+  lang: 'zh-CN',
+  title: siteTitle,
+  description: siteDescription,
   base: '/',
 
-  themeConfig: {
-    // 网站右上角 Logo 旁的文字
-    siteTitle: 'Sun-3Q',
+  cleanUrls: true,
+  lastUpdated: true,
 
-    // https://vitepress.dev/reference/default-theme-config
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+    ['meta', { name: 'theme-color', content: '#3c83f6' }],
+    ['meta', { property: 'og:site_name', content: siteTitle }],
+    ['meta', { property: 'og:title', content: siteTitle }],
+    ['meta', { property: 'og:description', content: siteDescription }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { name: 'twitter:card', content: 'summary' }]
+  ],
+
+  themeConfig: {
+    siteTitle: 'Sun-3Q',
+    titleTemplate: ':title | Sun-3Q Space',
     nav: [
       { text: '首页', link: '/' },
-      { text: '部署手册', link: '/deployment-guide' },
+      { text: '开始', link: '/setup-guide' },
+      { text: '部署', link: '/deployment-guide' },
       { text: 'USTC 生活', link: '/ustc-life' }
     ],
 
@@ -23,42 +37,34 @@ export default defineConfig({
       {
         text: '快速开始',
         items: [
+          { text: '站点使用说明', link: '/setup-guide' },
           { text: 'Markdown 示例', link: '/markdown-examples' },
-          { text: '运行时 API 示例', link: '/api-examples' }
+          { text: 'API 示例', link: '/api-examples' }
         ]
       },
       {
         text: '项目实战',
-        collapsed: false, // 默认展开
-        items: [
-          { text: '🚀 VitePress 部署指南', link: '/deployment_guide'}
-        ]
+        collapsed: false,
+        items: [{ text: 'VitePress 部署指南', link: '/deployment-guide' }]
       }
     ],
 
-    // 修改为你自己的 GitHub 仓库地址
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Sun-3Q/Sun-3Q.github.io' }
     ],
 
-    // 开启本地搜索（非常有用）
-    search: {
-      provider: 'local'
-    },
+    search: { provider: 'local' },
 
-    // 页脚配置
     footer: {
-      message: '基于 VitePress 驱动',
+      message: '基于 VitePress 构建',
       copyright: 'Copyright © 2026-present Sun-3Q'
     },
 
-    // 编辑链接（点击可以直接跳转到 GitHub 修改源码）
     editLink: {
       pattern: 'https://github.com/Sun-3Q/Sun-3Q.github.io/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页'
     },
 
-    // 最后更新时间的文字显示
-    lastUpdatedText: '最后更新时间'
+    lastUpdatedText: '最后更新'
   }
 })
